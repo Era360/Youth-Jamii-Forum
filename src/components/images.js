@@ -5,5 +5,6 @@ import phina from "./../assets/images/team/phina.jpg"
 import designs from "./../assets/images/web pics/design.jpg";
 import world from "./../assets/images/web pics/world.jpg";
 import group_people from "./../assets/images/web pics/g2.jpg";
+import leadership from "./../assets/images/web pics/leadership.jpg"
 
-export { darasahuru, ys, elia1, phina, designs, world, group_people };
+export { darasahuru, ys, elia1, phina, designs, world, group_people, leadership };

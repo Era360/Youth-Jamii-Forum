@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { darasahuru, designs, elia1, group_people, phina, world } from './images';
-import { BiBrain, BiBriefcase, BiCompass, BiStar, BiWorld } from 'react-icons/bi';
-import { FaChevronRight, FaCopyright, FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { BiBrain } from 'react-icons/bi';
+import { FaBriefcase, FaChevronRight, FaClock, FaCompass, FaCopyright, FaFacebook, FaGlobe, FaInstagram, FaLinkedin, FaStar, FaTwitter } from 'react-icons/fa';
 
 function Courses({ selectCourse }) {
     const navigate = useNavigate();
@@ -37,7 +37,7 @@ function Courses({ selectCourse }) {
     const courseClick = (course) => {
         // console.log(courses[course]);
         selectCourse(courses[course]);
-        navigate("/course");
+        navigate("/course_description");
     };
 
 
@@ -107,12 +107,12 @@ function Courses({ selectCourse }) {
                                         </div>
                                         <div className="card-footer">
                                             <div className="long">
-                                                <i className="bi bi-stopwatch" style={{ fontSize: "2rem", color: "cornflowerblue" }}></i>
+                                                <i className="bi bi-stopwatch" style={{ fontSize: "2rem", color: "cornflowerblue" }}><FaClock color='white' /></i>
                                                 <h6 className="my-0 text-white d-block">About {course["duration"]}</h6>
                                             </div>
                                             <div className="rated text-white">
                                                 {
-                                                    Array.from({ length: course["stars"] }, (e, i) => <span key={i}><BiStar /></span>)
+                                                    Array.from({ length: course["stars"] }, (e, i) => <span key={i}><FaStar /></span>)
                                                 }
                                             </div>
 
@@ -143,21 +143,21 @@ function Courses({ selectCourse }) {
 
                 <div className="row text-white">
                     <div className="col-md-5 learn-what get-job ">
-                        <i className="bx bx-briefcase fs-1"><BiBriefcase /></i>
+                        <i className="fs-1"><FaBriefcase /></i>
                         <h2>Get a job</h2>
                     </div>
                     <div className="col-md-5 learn-what rise-brain">
-                        <i className="bx bx-brain fs-1"><BiBrain /></i>
+                        <i className="fs-1"><BiBrain /></i>
                         <h2>Increase you knowledge</h2>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-5 learn-what get-career">
-                        <i className="bx bxs-business fs-1"><BiWorld /> </i>
+                        <i className="fs-1"><FaGlobe /> </i>
                         <h2>Get a career</h2>
                     </div>
                     <div className="col-md-5 learn-what find-passion">
-                        <i className="bx bx-compass fs-1"><BiCompass /></i>
+                        <i className="fs-1"><FaCompass /></i>
                         <h2>Find you passion</h2>
                     </div>
                 </div>
