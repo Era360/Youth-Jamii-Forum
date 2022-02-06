@@ -1,9 +1,45 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { darasahuru, designs, elia1, group_people, phina, world } from './images';
-import { BiStar } from 'react-icons/bi';
+import { BiBrain, BiBriefcase, BiCompass, BiStar, BiWorld } from 'react-icons/bi';
 
-function Courses() {
+function Courses({ selectCourse }) {
+    const navigate = useNavigate();
+
+    const courses = [
+        {
+            category: "Business",
+            title: "Grow your business: Master customer relationships and marketing.",
+            date: "October 15, 2021",
+            duration: "20 mins",
+            stars: 3,
+            picture: designs
+        },
+        {
+            category: "Earth",
+            title: "How you can help to change Global Warming.",
+            date: "January 15, 2022",
+            duration: "10 mins",
+            stars: 4,
+            picture: world
+        },
+        {
+            category: "Politics",
+            title: "How to lead your people in a good way.",
+            date: "January 21, 2022",
+            duration: "45 mins",
+            stars: 5,
+            picture: group_people
+        },
+    ]
+
+    const courseClick = (course) => {
+        // console.log(courses[course]);
+        selectCourse(courses[course]);
+        navigate("/course");
+    };
+
+
     return <>
         <header id="header" className="d-flex align-items-center ">
             <div className="container d-flex justify-content-between align-items-center">
@@ -17,13 +53,14 @@ function Courses() {
                         <li><Link to="/">Sign up</Link></li>
                         <li><Link to="/">Forums</Link></li>
                     </ul>
-                    <i className="bi bi-list mobile-nav-toggle"></i>
+                    {/* <i className="bi bi-list mobile-nav-toggle"></i> */}
                 </nav>
                 {/* <!-- .navbar --> */}
             </div>
         </header>
 
         <main className="mt-5">
+
             {/* <!-- ======= What is Darasa Huru ======= --> */}
             <section className="intro">
                 <div className="container">
@@ -52,102 +89,46 @@ function Courses() {
 
             {/* <!-- ======= Courses ======= --> */}
             <section className="wrapper">
+
                 {/* <!-- Grow Business course --> */}
-                <div className="mb-5">
-                    <div className="card text-white card-has-bg"
-                        style={{ backgroundImage: `url(${designs})` }}>
-                        <div className="card-img-overlay d-flex flex-column">
-                            <div className="card-body">
-                                <small className="card-meta mb-2">Business</small>
-                                <h4 className="card-title mt-0 "><Link to="/" className="text-white">Grow your business:
-                                    Master customer relationships and marketing</Link></h4>
-                                <small><i className="bi bi-clock"></i> October 15, 2020</small>
-                            </div>
-                            <div className="card-footer">
-                                <div className="long">
-                                    <i className="bi bi-stopwatch" style={{ fontSize: "2rem", color: "cornflowerblue" }}></i>
-                                    <h6 className="my-0 text-white d-block">About 20 mins</h6>
-                                </div>
-                                <div className="rated text-white">
-                                    <span><BiStar /></span>
-                                    <h4>Highly rated by users</h4>
-                                </div>
 
+                {
+                    courses.map((course, index) => (
+                        // console.log(course["category"])
+                        <div key={index}>
+                            <div className="mb-5">
+                                <div className="card text-white card-has-bg"
+                                    style={{ backgroundImage: `url(${course["picture"]})` }} onClick={() => courseClick(index)}>
+                                    <div className="card-img-overlay d-flex flex-column">
+                                        <div className="card-body">
+                                            <small className="card-meta mb-2">{course["category"]}</small>
+                                            <h4 className="card-title mt-0 "><Link to="/" className="text-white">{course["title"]}</Link></h4>
+                                            <small><i className="bi bi-clock"></i>{course["date"]}</small>
+                                        </div>
+                                        <div className="card-footer">
+                                            <div className="long">
+                                                <i className="bi bi-stopwatch" style={{ fontSize: "2rem", color: "cornflowerblue" }}></i>
+                                                <h6 className="my-0 text-white d-block">About {course["duration"]}</h6>
+                                            </div>
+                                            <div className="rated text-white">
+                                                {
+                                                    Array.from({ length: course["stars"] }, (e, i) => <span key={i}><BiStar /></span>)
+                                                }
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="extra">
+                                    <Link to="/">See more {course["category"]} courses
+                                    </Link>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="extra">
-                        <Link to="/">See more grow business courses
-                        </Link>
-                    </div>
-                </div>
+                    ))
+                }
 
-                {/* <!-- Save Earth course --> */}
-                <div className="mb-5">
-                    <div className="card text-white card-has-bg"
-                        style={{ backgroundImage: `url(${world})` }}>
-                        <div className="card-img-overlay d-flex flex-column">
-                            <div className="card-body">
-                                <small className="card-meta mb-2">Earth</small>
-                                <h4 className="card-title mt-0 "><Link to="/" className="text-white">How you can help
-                                    to change Global warming.
-                                </Link></h4>
-                                <small><i className="bi bi-clock"></i> October 15, 2020</small>
-                            </div>
-                            <div className="card-footer">
-                                <div className="long">
-                                    <i className="bi bi-stopwatch" style={{ fontSize: "2rem", color: "cornflowerblue" }}></i>
-                                    <h6 className="my-0 text-white d-block">About 20 mins</h6>
-                                </div>
-                                <div className="rated">
-                                    <i className="bi bi-star"></i>
-                                    <i className="bi bi-star"></i>
-                                    <i className="bi bi-star"></i>
-                                    <i className="bi bi-star"></i>
-                                    <i className="bi bi-star"></i>
-                                    <h4>Highly rated by users</h4>
-                                </div>
 
-                            </div>
-                        </div>
-                    </div>
-                    <div className="extra">
-                        <Link to="/">See more earth courses
-                        </Link>
-                    </div>
-                </div>
-
-                {/* <!-- Politics course --> */}
-                <div className="mb-5">
-                    <div className="card text-white card-has-bg"
-                        style={{ backgroundImage: `url(${group_people})` }}>
-                        <div className="card-img-overlay d-flex flex-column">
-                            <div className="card-body">
-                                <small className="card-meta mb-2">Politics</small>
-                                <h4 className="card-title mt-0 "><Link to="/" className="text-white">How to lead your People
-                                    in a good way.
-                                </Link></h4>
-                                <small><i className="bi bi-clock"></i> January 15, 2022</small>
-                            </div>
-                            <div className="card-footer">
-                                <div className="long">
-                                    <i className="bi bi-stopwatch" style={{ fontSize: "2rem", color: "cornflowerblue" }}></i>
-                                    <h6 className="my-0 text-white d-block">About 50 mins</h6>
-                                </div>
-                                <div className="rated">
-                                    <i className="bi bi-star"></i>
-                                    <i className="bi bi-star"></i>
-                                    <h4>Highly rated by users</h4>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div className="extra">
-                        <Link to="/">See more politics courses
-                        </Link>
-                    </div>
-                </div>
 
                 <div className="more-course">
                     <Link to="/"> See more courses</Link>
@@ -164,21 +145,21 @@ function Courses() {
 
                 <div className="row text-white">
                     <div className="col-md-5 learn-what get-job ">
-                        <i className="bx bx-briefcase fs-1"></i>
+                        <i className="bx bx-briefcase fs-1"><BiBriefcase /></i>
                         <h2>Get a job</h2>
                     </div>
                     <div className="col-md-5 learn-what rise-brain">
-                        <i className="bx bx-brain fs-1"></i>
+                        <i className="bx bx-brain fs-1"><BiBrain /></i>
                         <h2>Increase you knowledge</h2>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-5 learn-what get-career">
-                        <i className="bx bxs-business fs-1"></i>
+                        <i className="bx bxs-business fs-1"><BiWorld /> </i>
                         <h2>Get a career</h2>
                     </div>
                     <div className="col-md-5 learn-what find-passion">
-                        <i className="bx bx-compass fs-1"></i>
+                        <i className="bx bx-compass fs-1"><BiCompass /></i>
                         <h2>Find you passion</h2>
                     </div>
                 </div>

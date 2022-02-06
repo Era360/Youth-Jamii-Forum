@@ -77,14 +77,14 @@ color: #a2cce3;
 /**
 * Mobile Navigation 
 */
-.mobile-nav-toggle {
+/* .mobile-nav-toggle {
 color: rgb(255, 255, 255);
 font-size: 28px;
 cursor: pointer;
 display: none;
 line-height: 0;
 transition: 0.5s;
-}
+} */
 
 @media (max-width: 991px) {
 .mobile-nav-toggle {
@@ -95,7 +95,7 @@ transition: 0.5s;
   display: none;
 }
 }
-.navbar-mobile {
+/* .navbar-mobile {
 position: fixed;
 overflow: hidden;
 top: 0;
@@ -132,7 +132,7 @@ color: #68A4C4;
 }
 .navbar-mobile .getstarted, .navbar-mobile .getstarted:focus {
 margin: 15px;
-}
+} */
 
 .section-bg{
   background-color: #f3f8fa;
@@ -668,8 +668,8 @@ margin-bottom: 0;
   margin:10vh 20px;
 }
 .card{
-    min-height:300px;
-    margin: 10px 0;
+  min-height:300px;
+  margin: 10px 0;
 }
 .card-has-bg{
   background-size:200%;
