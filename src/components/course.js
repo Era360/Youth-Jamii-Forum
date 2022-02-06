@@ -1,6 +1,6 @@
 import React from 'react';
 import { BiBrain, BiMailSend, BiStar, BiTime } from 'react-icons/bi';
-import { FaArrowLeft, FaChevronRight, FaCopyright, FaFacebook, FaHome, FaInstagram, FaLinkedin, FaMailchimp, FaPhone, FaPhoneAlt, FaStar, FaTwitter } from "react-icons/fa";
+import { FaArrowLeft, FaChevronRight, FaCopyright, FaFacebook, FaHome, FaInstagram, FaLinkedin, FaPhoneAlt, FaStar, FaTwitter } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { darasahuru } from './images';
 import css from "./course.module.css";
@@ -20,8 +20,8 @@ function Course({ course }) {
                 </nav>
             </div>
         </header>
-        <main>
 
+        <main>
             {/* Intro */}
             <section className='intro' id={css.intro}>
                 <h1>{course["title"]}</h1>
@@ -104,12 +104,9 @@ function Course({ course }) {
                 <h2>Start the course right now</h2>
                 <FaChevronRight size={30} />
             </div>
-
         </main>
 
-        {/* <!-- ======= Footer ======= --> */}
         <footer id="footer">
-
             <div className="footer-newsletter">
                 <div className="container">
                     <div className="row">
@@ -170,8 +167,6 @@ function Course({ course }) {
                 </div>
             </div>
         </footer>
-        {/* <!-- End Footer --> */}
-
     </>;
 }
 

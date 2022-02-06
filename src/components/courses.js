@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { darasahuru, designs, elia1, group_people, phina, world } from './images';
 import { BiBrain, BiBriefcase, BiCompass, BiStar, BiWorld } from 'react-icons/bi';
+import { FaChevronRight, FaCopyright, FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 function Courses({ selectCourse }) {
     const navigate = useNavigate();
@@ -72,7 +73,7 @@ function Courses({ selectCourse }) {
 
                         <div className="col-lg-6 p-5">
                             <h4 className="title"><Link to="/">Get to know Darasa Huru</Link></h4>
-                            <p className="description">Darasa huru is a platform to help anyone to get knowledge of variety
+                            <p>Darasa huru is a platform to help anyone to get knowledge of variety
                                 of stuffs
                                 going
                                 on in the world
@@ -91,7 +92,6 @@ function Courses({ selectCourse }) {
             <section className="wrapper">
 
                 {/* <!-- Grow Business course --> */}
-
                 {
                     courses.map((course, index) => (
                         // console.log(course["category"])
@@ -127,8 +127,6 @@ function Courses({ selectCourse }) {
                         </div>
                     ))
                 }
-
-
 
                 <div className="more-course">
                     <Link to="/"> See more courses</Link>
@@ -231,7 +229,7 @@ function Courses({ selectCourse }) {
         </main>
 
         {/* <!-- ======= Footer ======= --> */}
-        <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+        <footer id="footer" >
             <div className="footer-newsletter">
                 <div className="container">
                     <div className="row">
@@ -255,11 +253,10 @@ function Courses({ selectCourse }) {
                         <div className="col-lg-4 col-md-6 footer-links">
                             <h4>Useful Links</h4>
                             <ul>
-                                <li><i className="bx bx-chevron-right"></i> <Link to="/"> Home</Link></li>
-                                <li><i className="bx bx-chevron-right"></i> <Link to="/"> About us</Link></li>
-                                {/* <li><i className="bx bx-chevron-right"></i> <Link to="/"> Services</Link></li> */}
-                                <li><i className="bx bx-chevron-right"></i> <Link to="/"> Terms of service</Link></li>
-                                <li><i className="bx bx-chevron-right"></i> <Link to="/"> Privacy policy</Link></li>
+                                <li><i><FaChevronRight /></i> <Link to="http://127.0.0.1:5501/index.html"> Home</Link></li>
+                                <li><i><FaChevronRight /></i> <Link to="http://127.0.0.1:5501/about.html"> About us</Link></li>
+                                <li><i><FaChevronRight /></i> <Link to="/"> Terms of service</Link></li>
+                                <li><i><FaChevronRight /></i> <Link to="/"> Privacy policy</Link></li>
                             </ul>
                         </div>
 
@@ -280,10 +277,10 @@ function Courses({ selectCourse }) {
                             <h3>About Darasa Huru</h3>
                             <p>A platform created by patriotic Tanzanian youth.</p>
                             <div className="social-links mt-3">
-                                <Link to="/" className="twitter"><i className="bx bxl-twitter"></i></Link>
-                                <Link to="/" className="facebook"><i className="bx bxl-facebook"></i></Link>
-                                <Link to="/" className="instagram"><i className="bx bxl-instagram"></i></Link>
-                                <Link to="/" className="linkedin"><i className="bx bxl-linkedin"></i></Link>
+                                <Link to="/"><i><FaTwitter /></i></Link>
+                                <Link to="/"><i><FaFacebook /></i></Link>
+                                <Link to="/"><i><FaInstagram /></i></Link>
+                                <Link to="/"><i><FaLinkedin /></i></Link>
                             </div>
                         </div>
 
@@ -293,7 +290,7 @@ function Courses({ selectCourse }) {
 
             <div className="container">
                 <div className="copyright">
-                    &copy; Copyright <strong><span>Darasa Huru</span></strong>. All Rights Reserved
+                    <FaCopyright /> Copyright <strong><span>Darasa Huru</span></strong>. All Rights Reserved
                 </div>
             </div>
         </footer>
