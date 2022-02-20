@@ -8,6 +8,11 @@
 #assets
 /src/assets
 
+#firebase
+.firebase
+.firebaserc
+
+
 # testing
 /coverage
 
