@@ -68,7 +68,7 @@ function Courses({ selectCourse }) {
                     <div className="row">
                         <div className="col-lg-6 intro-img">
                             <img src={darasahuru} className="img-fluid" alt="" />
-                            <Link to="https://www.youtube.com/watch?v=jDDaplaOz7Q" className="play-btn mb-4"></Link>
+                            <Link to="#" className="play-btn mb-4"></Link>
                         </div>
 
                         <div className="col-lg-6 p-5">

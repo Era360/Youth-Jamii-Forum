@@ -1,4 +1,3 @@
-import React from 'react';
 import { BiBrain, BiMailSend, BiStar, BiTime } from 'react-icons/bi';
 import { FaArrowLeft, FaChevronRight, FaCopyright, FaFacebook, FaHome, FaInstagram, FaLinkedin, FaPhoneAlt, FaStar, FaTwitter } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom';
@@ -24,88 +23,101 @@ function CourseDescription({ course }) {
         </header>
 
         <main>
-            {/* Intro */}
-            <section className='intro' id={css.intro}>
-                <h1>{course["title"]}</h1>
-                <div className="intro-img">
-                    <img src={course["picture"]} alt={course["title"]} className="img-fluid" />
-                    <Link to="https://www.youtube.com/watch?v=jDDaplaOz7Q" className="play-btn mb-4"></Link>
-                </div>
-                <div className={css.ratings}>
-                    <div>
-                        <BiTime />
-                        <p>Suggested time: {course["duration"]}</p>
-                    </div>
-                    <div>
-                        {
-                            Array.from({ length: course["stars"] }, (e, i) => <span key={i}><FaStar /></span>)
-                        }
-                        <p>{course["stars"]} stars rated by course takers</p>
-                    </div>
-                </div>
-            </section>
+            {
+                course
+                    ?
+                    (
+                        <>
+                            {/* Intro */}
+                            <section className='intro' id={css.intro}>
+                                <h1>{course["title"]}</h1>
+                                <div className="intro-img">
+                                    <img src={course["picture"]} alt={course["title"]} className="img-fluid" />
+                                    <Link to="#" className="play-btn mb-4"></Link>
+                                </div>
+                                <div className={css.ratings}>
+                                    <div>
+                                        <BiTime />
+                                        <p>Suggested time: {course["duration"]}</p>
+                                    </div>
+                                    <div>
+                                        {
+                                            Array.from({ length: course["stars"] }, (e, i) => <span key={i}><FaStar /></span>)
+                                        }
+                                        <p>{course["stars"]} stars rated by course takers</p>
+                                    </div>
+                                </div>
+                            </section>
 
-            <div className={css.joint} onClick={() => navigate("/course_description/course")}>
-                <h2>Start learning</h2>
-                <FaChevronRight size={30} />
-            </div>
+                            <div className={css.joint} onClick={() => navigate("/course_description/course")}>
+                                <h2>Start learning</h2>
+                                <FaChevronRight size={30} />
+                            </div>
 
-            <section className='my-4'>
-                <h3>Course description</h3>
-                <div id={css.description}>
-                    <hr />
-                    <p>
-                        Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et
-                        laboriosam eius aut nostrum quidem aliquid dicta.
-                        Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod
-                        quos aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
-                    </p>
-                </div>
-            </section>
+                            <section className='my-4'>
+                                <h3>Course description</h3>
+                                <div id={css.description}>
+                                    <hr />
+                                    <p>
+                                        Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et
+                                        laboriosam eius aut nostrum quidem aliquid dicta.
+                                        Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod
+                                        quos aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
+                                    </p>
+                                </div>
+                            </section>
 
-            <section className='my-4'>
-                <div className={css.what_to_learn}>
-                    <BiBrain size={30} />
-                    <h3 className='mx-3'>What you will learn</h3>
-                </div>
-                <hr />
-                <div className={css.what_to_learn_list}>
-                    <p>1. How to manage your business </p>
-                    <p>2. Concepts to control your business workflow</p>
-                    <p>3. Managing your income for the business</p>
-                </div>
-            </section>
+                            <section className='my-4'>
+                                <div className={css.what_to_learn}>
+                                    <BiBrain size={30} />
+                                    <h3 className='mx-3'>What you will learn</h3>
+                                </div>
+                                <hr />
+                                <div className={css.what_to_learn_list}>
+                                    <p>1. How to manage your business </p>
+                                    <p>2. Concepts to control your business workflow</p>
+                                    <p>3. Managing your income for the business</p>
+                                </div>
+                            </section>
 
-            <section className='my-4'>
-                <h3>What others say about this course</h3>
-                <hr />
-                <div className={css.what_to_learn_list}>
-                    <div>
-                        <p className='fst-italic fw-bold'>"This is so cool"</p>
-                        <p className='fs-6 fw-light'>-Anna Mwansa, Tanzania</p>
+                            <section className='my-4'>
+                                <h3>What others say about this course</h3>
+                                <hr />
+                                <div className={css.what_to_learn_list}>
+                                    <div>
+                                        <p className='fst-italic fw-bold'>"This is so cool"</p>
+                                        <p className='fs-6 fw-light'>-Anna Mwansa, Tanzania</p>
+                                    </div>
+                                    <div>
+                                        <p className='fst-italic fw-bold'>
+                                            "Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
+                                            quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper."
+                                        </p>
+                                        <p className='fs-6 fw-light'>-Lebron James, USA</p>
+                                    </div>
+                                    <div>
+                                        <p className='fst-italic fw-bold'>
+                                            "Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis
+                                            quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa."
+                                        </p>
+                                        <p className='fs-6 fw-light'>-Mark paul, London</p>
+                                    </div>
+                                    <p className='extra'><Link to={"/"}>Read all reviews</Link></p>
+                                </div>
+                            </section>
+
+                            <div className={css.joint} onClick={() => navigate("/course_description/course")}>
+                                <h2>Start the course right now</h2>
+                                <FaChevronRight size={30} />
+                            </div>
+                        </>
+                    )
+                    :
+                    <div className='my-4 p-2'>
+                        <h2>Nothing to show</h2>
                     </div>
-                    <div>
-                        <p className='fst-italic fw-bold'>
-                            "Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
-                            quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper."
-                        </p>
-                        <p className='fs-6 fw-light'>-Lebron James, USA</p>
-                    </div>
-                    <div>
-                        <p className='fst-italic fw-bold'>
-                            "Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis
-                            quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa."
-                        </p>
-                        <p className='fs-6 fw-light'>-Mark paul, London</p>
-                    </div>
-                    <p className='extra'><Link to={"/"}>Read all reviews</Link></p>
-                </div>
-            </section>
+            }
 
-            <div className={css.joint} onClick={() => navigate("/course_description/course")}>
-                <h2>Start the course right now</h2>
-                <FaChevronRight size={30} />
-            </div>
         </main>
 
         <footer id="footer">

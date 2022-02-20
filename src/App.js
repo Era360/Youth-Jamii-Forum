@@ -3,8 +3,6 @@ import Courses from './components/courses';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CourseDescription from './components/course_description';
 import Course from './components/course';
-// import logo from './logo.svg';
-// import './App.css';
 
 function App() {
   const [course, setCourse] = useState();
