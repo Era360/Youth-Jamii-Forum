@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Courses from './components/courses';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CourseDescription from './components/course_description';
 import Course from './components/course';
+import { initializeAnalytics } from 'firebase/analytics';
+import { app } from './firebase';
 
 function App() {
   const [course, setCourse] = useState();
+  useEffect(() => {
+    initializeAnalytics(app);
+
+  }, [])
 
   return (
     <div>

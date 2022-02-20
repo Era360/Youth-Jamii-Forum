@@ -47,16 +47,14 @@ function Courses({ selectCourse }) {
                 <div className="logo">
                     <Link to="/"><img src={darasahuru} alt="" className="img-fluid" /></Link>
                 </div>
-                <nav id="navbar" className="navbar">
+                {/* <nav id="navbar" className="navbar">
                     <ul>
                         <li><Link to="/">Log in</Link></li>
                         <li><Link to="/">Courses</Link></li>
                         <li><Link to="/">Sign up</Link></li>
                         <li><Link to="/">Forums</Link></li>
                     </ul>
-                    {/* <i className="bi bi-list mobile-nav-toggle"></i> */}
-                </nav>
-                {/* <!-- .navbar --> */}
+                </nav> */}
             </div>
         </header>
 
@@ -141,7 +139,7 @@ function Courses({ selectCourse }) {
             </div>
             <section className="wrapper">
 
-                <div className="row text-white">
+                <div className="row text-white p-3">
                     <div className="col-md-5 learn-what get-job ">
                         <i className="fs-1"><FaBriefcase /></i>
                         <h2>Get a job</h2>
@@ -151,7 +149,7 @@ function Courses({ selectCourse }) {
                         <h2>Increase you knowledge</h2>
                     </div>
                 </div>
-                <div className="row">
+                <div className="row p-3">
                     <div className="col-md-5 learn-what get-career">
                         <i className="fs-1"><FaGlobe /> </i>
                         <h2>Get a career</h2>
@@ -177,7 +175,7 @@ function Courses({ selectCourse }) {
                             <div className="col-md-4">
                                 <img src={elia1} className="avatar" alt="" />
                             </div>
-                            <div className="col-md-8 comment">
+                            <div className="col-md-8 comment p-4">
                                 <h3>Elia Mkumbo</h3>
                                 <h4>Software Engineer</h4>
                                 <p>
@@ -204,7 +202,7 @@ function Courses({ selectCourse }) {
                             <div className="col-md-4">
                                 <img src={phina} className="avatar" alt="" />
                             </div>
-                            <div className="col-md-8 comment">
+                            <div className="col-md-8 comment p-4">
                                 <h3>Martha Mwandambo</h3>
                                 <h4>Graphics Designer</h4>
                                 <p>
@@ -253,8 +251,8 @@ function Courses({ selectCourse }) {
                         <div className="col-lg-4 col-md-6 footer-links">
                             <h4>Useful Links</h4>
                             <ul>
-                                <li><i><FaChevronRight /></i> <Link to="http://127.0.0.1:5501/index.html"> Home</Link></li>
-                                <li><i><FaChevronRight /></i> <Link to="http://127.0.0.1:5501/about.html"> About us</Link></li>
+                                <li><i><FaChevronRight /></i> <Link to="/"> Home</Link></li>
+                                <li><i><FaChevronRight /></i> <Link to="/"> About us</Link></li>
                                 <li><i><FaChevronRight /></i> <Link to="/"> Terms of service</Link></li>
                                 <li><i><FaChevronRight /></i> <Link to="/"> Privacy policy</Link></li>
                             </ul>
