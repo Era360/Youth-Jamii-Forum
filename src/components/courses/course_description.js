@@ -1,7 +1,7 @@
 import { BiBrain, BiMailSend, BiTime } from 'react-icons/bi';
 import { FaArrowLeft, FaChevronRight, FaCopyright, FaFacebook, FaInstagram, FaLinkedin, FaPhoneAlt, FaStar, FaTwitter } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom';
-import { darasahuru } from './images';
+import { darasahuru } from '../images';
 import css from "./course_description.module.css";
 
 function CourseDescription({ course }) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { darasahuru, designs, elia1, group_people, phina, world } from './images';
+import { darasahuru, designs, elia1, group_people, phina, world } from '../images';
 import { BiBrain } from 'react-icons/bi';
 import { FaBriefcase, FaChevronRight, FaClock, FaCompass, FaCopyright, FaFacebook, FaGlobe, FaInstagram, FaLinkedin, FaStar, FaTwitter } from 'react-icons/fa';
 // import { logEvent } from 'firebase/analytics';
@@ -53,14 +53,14 @@ function Courses({ selectCourse }) {
                 <div className="logo">
                     <Link to="/"><img src={darasahuru} alt="" className="img-fluid" /></Link>
                 </div>
-                {/* <nav id="navbar" className="navbar">
+                <nav id="navbar" className="navbar">
                     <ul>
                         <li><Link to="/">Log in</Link></li>
                         <li><Link to="/">Courses</Link></li>
                         <li><Link to="/">Sign up</Link></li>
                         <li><Link to="/">Forums</Link></li>
                     </ul>
-                </nav> */}
+                </nav>
             </div>
         </header>
 
@@ -153,7 +153,7 @@ function Courses({ selectCourse }) {
                     </div>
                     <div className="col-md-5 learn-what rise-brain">
                         <i className="fs-1"><BiBrain /></i>
-                        <h2>Increase you knowledge</h2>
+                        <h2>Increase your knowledge</h2>
                     </div>
                 </div>
                 <div className="row p-3">

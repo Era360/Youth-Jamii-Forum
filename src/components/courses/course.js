@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaAnchor, FaArrowLeft, FaExclamation, FaHatCowboy, FaHome, FaPlay } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { darasahuru, leadership } from './images';
+import { darasahuru, leadership } from '../images';
 import css from "./course.module.css"
 
 function Course({ course }) {
@@ -26,7 +26,7 @@ function Course({ course }) {
     const Morestarted = () => {
         return <>
             <div className={css.more}>
-                <p>What is your anme</p>
+                <p>What is your name</p>
                 <p>Where do you live</p>
                 <p>What are you doing</p>
             </div>
