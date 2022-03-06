@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { darasahuru, designs, elia1, group_people, phina, world } from './images';
 import { BiBrain } from 'react-icons/bi';
 import { FaBriefcase, FaChevronRight, FaClock, FaCompass, FaCopyright, FaFacebook, FaGlobe, FaInstagram, FaLinkedin, FaStar, FaTwitter } from 'react-icons/fa';
+// import { logEvent } from 'firebase/analytics';
+// import { analytics } from '../firebase';
 
 function Courses({ selectCourse }) {
     const navigate = useNavigate();
@@ -33,6 +35,10 @@ function Courses({ selectCourse }) {
             picture: group_people
         },
     ]
+
+    // const show = () => {
+    //     logEvent(analytics, "course_click");
+    // }
 
     const courseClick = (course) => {
         // console.log(courses[course]);
@@ -96,7 +102,8 @@ function Courses({ selectCourse }) {
                         <div key={index}>
                             <div className="mb-5">
                                 <div className="card text-white card-has-bg"
-                                    style={{ backgroundImage: `url(${course["picture"]})` }} onClick={() => courseClick(index)}>
+                                    style={{ backgroundImage: `url(${course["picture"]})` }}
+                                    onClick={() => courseClick(index)}>
                                     <div className="card-img-overlay d-flex flex-column">
                                         <div className="card-body">
                                             <small className="card-meta mb-2">{course["category"]}</small>
