@@ -55,7 +55,7 @@ function Courses({ selectCourse }) {
                 </div>
                 <nav id="navbar" className="navbar">
                     <ul>
-                        <li><Link to="/">Log in</Link></li>
+                        <li><Link to="/login">Log in</Link></li>
                         <li><Link to="/">Courses</Link></li>
                         <li><Link to="/">Sign up</Link></li>
                         <li><Link to="/">Forums</Link></li>
